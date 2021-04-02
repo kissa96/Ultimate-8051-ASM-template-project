@@ -49,7 +49,7 @@ P_USER_PROGRAM_START:
 
         LCALL   S_INIT_SERIAL_PORT      ;Definition of subroutines can be found inside SUBROUTINES.A51
         LCALL   S_INIT_TIMER_0
-        MOV     DPTR,#CCONST_LOREM_IPSUM
+        MOV     DPTR,#C_LOREM_IPSUM
         LCALL   S_SERIAL_WRITE_TEXT_AT_DPTR
         LCALL   S_GET_NEXT_INSTR_PC_VALUE_IN_DPTR
         

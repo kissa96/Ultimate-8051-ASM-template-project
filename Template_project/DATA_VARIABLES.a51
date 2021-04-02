@@ -32,7 +32,7 @@ $IF    (ASSEMBLE_DATA_VARIABLES = 1)
         PUBLIC  D_T0_OVF_EXTEND
         PUBLIC  D_T0_OVF_HALF_SEC
              
-D_VAR:	        DS	1
+D_VAR:	          DS	  1
 D_T0_OVF_EXTEND:  DS      1
 D_T0_OVF_HALF_SEC:DS      1
 
