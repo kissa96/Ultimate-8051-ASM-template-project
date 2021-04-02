@@ -29,7 +29,8 @@ $IF    (ASSEMBLE_VARIABLES = 1)
 $IF    (ASSEMBLE_CONSTANTS = 1)
 
         EXTRN   CODE    (CCONST_TEMPLATE_TEXT)
-
+        EXTRN   CODE    (CCONST_LOREM_IPSUM)
+        
 $ENDIF
 $ENDIF 
 #endif

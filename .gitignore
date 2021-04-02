@@ -42,8 +42,8 @@
 *._ii
 
 # Generated output files
-/Template_code/Listings/*
-/Template_code/Objects/*
+/Template_code/Listings/*.*
+/Template_code/Objects/*.*
 
 # Debugger files
 # define exception below if needed

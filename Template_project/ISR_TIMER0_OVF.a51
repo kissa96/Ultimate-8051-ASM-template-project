@@ -40,12 +40,22 @@ ENDIF
         RSEG    IRQ_TIMER_0    
 IRQ_VECT_TIMER_0_OVERFLOW:
         USING   0
-        DJNZ    T0_OVF_EXTEND,IRQ_VECT_TIMER0_OVERFLOW_END
-        MOV     T0_OVF_EXTEND,#36
+        DJNZ    D_T0_OVF_EXTEND,IRQ_VECT_TIMER0_OVERFLOW_END
+        MOV     D_T0_OVF_EXTEND,#36
         ;Below this line, everything gets executed exactly every 10ms
         ;If and only if a clock frequency of 11.0592MHz is used
         LCALL   S_WRITE_XDATA_PERIPH_LEDS_FROM_ACC
         LCALL   S_READ_XDATA_PERIPH_BUTTONS_INTO_ACC
+        DJNZ    D_T0_OVF_HALF_SEC,IRQ_VECT_TIMER0_OVERFLOW_END
+        MOV     D_T0_OVF_HALF_SEC,#50
+        ;Below this line, everything gets executed exactly every 0.5 sec
+        ;If and only if a clock frequency of 11.0592MHz is used
+        LCALL   S_CHASER_ON_P1
+        CPL     B_T0_OVF_SEC_EXTEND_BIT
+        JNB     B_T0_OVF_SEC_EXTEND_BIT,IRQ_VECT_TIMER0_OVERFLOW_END
+        ;Below this line, everything gets executed exactly every 1 sec
+        ;If and only if a clock frequency of 11.0592MHz is used
+        LCALL   S_COUNTER_ON_P2
 IRQ_VECT_TIMER0_OVERFLOW_END:
         RETI
 $ENDIF

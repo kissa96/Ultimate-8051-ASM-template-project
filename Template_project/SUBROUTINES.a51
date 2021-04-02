@@ -25,6 +25,7 @@ SOFTWARE.
         $INCLUDE(CONFIG.INC)
         $INCLUDE(REG552.INC)
         $INCLUDE(GYAK552_UV2.INC)
+        $INCLUDE(MACROS.INC)
         $INCLUDE(EXTERNAL_DATA.INC)
         $INCLUDE(EXTERNAL_IDATA.INC)
         $INCLUDE(EXTERNAL_XDATA.INC)
@@ -50,15 +51,28 @@ $IF(ASSEMBLE_SUBROUTINES = 1)
         PUBLIC  S_WRITE_XDATA_PERIPH_LEDS_FROM_ACC
         PUBLIC  S_READ_XDATA_PERIPH_BUTTONS_INTO_ACC
         PUBLIC  S_INIT_TIMER_0
-        
-        
+        PUBLIC  S_CHASER_ON_P1
+        PUBLIC  S_COUNTER_ON_P2
         
         
         
 S_NOP:  
         NOP
 RET
-        
+S_CHASER_ON_P1:
+        PUSH    ACC
+        MOV     A,P1
+        RL      A
+        MOV     P1,A
+        POP     ACC
+        RET
+S_COUNTER_ON_P2:
+        PUSH    ACC
+        MOV     A,P2
+        INC     A
+        MOV     P2,A
+        POP     ACC
+        RET
 S_READ_XDATA_PERIPH_BUTTONS_INTO_ACC:
         PUSH    DPH
         PUSH    DPL
@@ -90,7 +104,9 @@ IF IN_PIR_LAB <> 1
 ELSE
         ;In this case, the monitor program has already configured the serial port
 ENDIF
+$IF(ASSEMBLE_ISR_SERIAL = 0)
         SETB    TI      ;If and only if serial interrupt is not used
+$ENDIF
 RET
         
 S_SERIAL_WRITE_BYTE:

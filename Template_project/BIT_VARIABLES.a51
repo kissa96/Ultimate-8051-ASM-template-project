@@ -29,9 +29,11 @@ $IF    (ASSEMBLE_BIT_VARIABLES = 1)
         BIT_SEG	SEGMENT BIT		
         RSEG	BIT_SEG
         PUBLIC  B_VAR
+        PUBLIC  B_T0_OVF_SEC_EXTEND_BIT
         
 B_VAR:	DBIT	1
-
+B_T0_OVF_SEC_EXTEND_BIT:
+        DBIT    1
 $ENDIF
 $ENDIF 
         END

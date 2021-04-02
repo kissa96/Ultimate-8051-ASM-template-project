@@ -24,14 +24,32 @@ SOFTWARE.
 $IF    (ASSEMBLE_VARIABLES = 1)          
 $IF    (ASSEMBLE_CONSTANTS = 1)
 
+        CR      EQU     15
+        LF      EQU     12
+
 ;READ ONLY VARIABLES FOR CODE SPACE	
         CCONST SEGMENT CODE
         RSEG	CCONST
         PUBLIC  CCONST_TEMPLATE_TEXT
+        PUBLIC  CCONST_LOREM_IPSUM
         
-;ASCII coded character vector
+        
+;ASCII coded character vectors
 CCONST_TEMPLATE_TEXT:	
                 DB      "Hello World!",0
+
+CCONST_LOREM_IPSUM: 
+                DB      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",CR,LF, \
+                        "Phasellus ut feugiat urna. Ut finibus molestie ipsum eu rutrum.",CR,LF, \
+                        "Fusce imperdiet volutpat vestibulum. Praesent vel elit vel erat viverra dictum.",CR,LF, \
+                        "Mauris faucibus venenatis erat, sed faucibus eros egestas sit amet.",CR,LF, \
+                        "Phasellus placerat purus non augue aliquam cursus.",CR,LF, \
+                        "Suspendisse sit amet elit et augue gravida scelerisque.",CR,LF, \
+                        "Fusce elit nibh, venenatis ut elit in, rhoncus elementum nulla.",0
+
+
+
+
 
 $ENDIF
 $ENDIF 

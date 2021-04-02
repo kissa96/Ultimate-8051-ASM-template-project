@@ -29,10 +29,12 @@ $IF    (ASSEMBLE_DATA_VARIABLES = 1)
         DATA_SEG SEGMENT DATA		
         RSEG    DATA_SEG
         PUBLIC  D_VAR
-        PUBLIC  T0_OVF_EXTEND
-               
+        PUBLIC  D_T0_OVF_EXTEND
+        PUBLIC  D_T0_OVF_HALF_SEC
+             
 D_VAR:	        DS	1
-T0_OVF_EXTEND:  DS      1
+D_T0_OVF_EXTEND:  DS      1
+D_T0_OVF_HALF_SEC:DS      1
 
 $ENDIF
 $ENDIF 

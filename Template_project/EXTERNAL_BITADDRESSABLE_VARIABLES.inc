@@ -28,7 +28,7 @@ SOFTWARE.
 $IF    (ASSEMBLE_VARIABLES = 1)  
 $IF    (ASSEMBLE_BITADDRESSABLE_VARIABLES = 1)
 
-        EXTRN   DATA    (BADDR_VAR)
+        EXTRN   DATA    (DBA_BADDR_VAR)
           EXTRN BIT     (_A) ;_A to _H are the individual bits of BADDR_VAR
           EXTRN BIT     (_B)
           EXTRN BIT     (_C)

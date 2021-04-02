@@ -27,7 +27,7 @@ $IF    (ASSEMBLE_VARIABLES = 1)
 $IF    (ASSEMBLE_BIT_VARIABLES = 1)
 
         EXTRN   BIT     (B_VAR)
-          
+        EXTRN   BIT     (B_T0_OVF_SEC_EXTEND_BIT)
 $ENDIF
 $ENDIF          
           
