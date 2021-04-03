@@ -59,20 +59,23 @@ $IF(ASSEMBLE_SUBROUTINES = 1)
 S_NOP:  
         NOP
 RET
+
 S_CHASER_ON_P1:
         PUSH    ACC
         MOV     A,P1
         RL      A
         MOV     P1,A
         POP     ACC
-        RET
+RET
+
 S_COUNTER_ON_P2:
         PUSH    ACC
         MOV     A,P2
         INC     A
         MOV     P2,A
         POP     ACC
-        RET
+RET
+
 S_READ_XDATA_PERIPH_BUTTONS_INTO_ACC:
         PUSH    DPH
         PUSH    DPL
@@ -95,7 +98,7 @@ S_WRITE_XDATA_PERIPH_LEDS_FROM_ACC:
 RET
         
 S_INIT_SERIAL_PORT:
-IF IN_PIR_LAB <> 1      ;not equal to 1
+IF IN_PIR_LAB <> 1      ;does not equal to 1
         MOV     SCON,#50H
         ANL     TMOD,#0FH
         ORL     TMOD,#20H
@@ -103,7 +106,7 @@ IF IN_PIR_LAB <> 1      ;not equal to 1
         SETB    TR1      
 ELSE
         ;In this case, the monitor program has already configured the serial port
-         __WARNING__ "Serial port is being used by MON51, do not change parameters"
+        __WARNING__ "Serial port is being used by MON51, do not change parameters"
 ENDIF
 $IF(ASSEMBLE_ISR_SERIAL = 0)
         SETB    TI      ;If and only if serial interrupt is not used
@@ -157,6 +160,7 @@ S_INIT_INTERRUPT_SYSTEM:
         MOV     IP0,#00H        ;Set these manually
         MOV     IP1,#00H
         
+        SETB    PT0
 $IF(ASSEMBLE_ISR_EXTERNAL0 = 1)
         SETB    EX0
 $ENDIF

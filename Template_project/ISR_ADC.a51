@@ -24,6 +24,7 @@ SOFTWARE.
         $INCLUDE(ALIASES.INC)
         $INCLUDE(CONFIG.INC)
         $INCLUDE(REG552.INC)
+        $INCLUDE(MACROS.INC)
         $INCLUDE(EXTERNALS.INC)
 
 $IF    (ASSEMBLE_ISR_ALL = 1)                                  
@@ -34,10 +35,10 @@ IF IN_PIR_LAB <> 1
 ELSE
         CSEG    AT      4053H
 ENDIF
-        LJMP    IRQ_VECT_ADC
-        IRQ_ADC SEGMENT CODE
-        RSEG    IRQ_ADC     
-IRQ_VECT_ADC:
+        LJMP    ISR_VECT_ADC
+        ISR_ADC SEGMENT CODE
+        RSEG    ISR_ADC     
+ISR_VECT_ADC:
         USING   0
         
         

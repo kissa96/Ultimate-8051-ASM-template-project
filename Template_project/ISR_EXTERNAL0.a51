@@ -24,7 +24,8 @@ SOFTWARE.
         $NOMOD51
         $INCLUDE(ALIASES.INC)
         $INCLUDE(CONFIG.INC)
-        $INCLUDE(REG552.INC)       
+        $INCLUDE(REG552.INC)
+        $INCLUDE(MACROS.INC)        
         $INCLUDE(EXTERNALS.INC)
 
 $IF    (ASSEMBLE_ISR_ALL = 1)
@@ -35,10 +36,10 @@ IF IN_PIR_LAB <> 1
 ELSE
         CSEG    AT      4003H
 ENDIF
-        LJMP    IRQ_VECT_EXTERNAL_0
-        IRQ_EXTERNAL_0 SEGMENT CODE
-        RSEG    IRQ_EXTERNAL_0       
-IRQ_VECT_EXTERNAL_0:
+        LJMP    ISR_VECT_EXTERNAL_0
+        ISR_EXTERNAL_0 SEGMENT CODE
+        RSEG    ISR_EXTERNAL_0       
+ISR_VECT_EXTERNAL_0:
         USING   0
         
         RETI ;note, RETI is used instead of RET

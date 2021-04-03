@@ -24,7 +24,8 @@ SOFTWARE.
         $NOMOD51
         $INCLUDE(ALIASES.INC)
         $INCLUDE(CONFIG.INC)
-        $INCLUDE(REG552.INC)     
+        $INCLUDE(REG552.INC) 
+        $INCLUDE(MACROS.INC)
         $INCLUDE(EXTERNALS.INC)
 
 $IF    (ASSEMBLE_ISR_ALL = 1)
@@ -35,28 +36,28 @@ IF IN_PIR_LAB <> 1
 ELSE
         CSEG    AT      400BH
 ENDIF
-        LJMP    IRQ_VECT_TIMER_0_OVERFLOW
-        IRQ_TIMER_0 SEGMENT CODE
-        RSEG    IRQ_TIMER_0    
-IRQ_VECT_TIMER_0_OVERFLOW:
+        LJMP    ISR_VECT_TIMER_0_OVERFLOW
+        ISR_TIMER_0 SEGMENT CODE
+        RSEG    ISR_TIMER_0    
+ISR_VECT_TIMER_0_OVERFLOW:
         USING   0
-        DJNZ    D_T0_OVF_EXTEND,IRQ_VECT_TIMER0_OVERFLOW_END
+        DJNZ    D_T0_OVF_EXTEND,ISR_VECT_TIMER0_OVERFLOW_END
         MOV     D_T0_OVF_EXTEND,#36
         ;Below this line, everything gets executed exactly every 10ms
         ;If and only if a clock frequency of 11.0592MHz is used
         LCALL   S_WRITE_XDATA_PERIPH_LEDS_FROM_ACC
         LCALL   S_READ_XDATA_PERIPH_BUTTONS_INTO_ACC
-        DJNZ    D_T0_OVF_HALF_SEC,IRQ_VECT_TIMER0_OVERFLOW_END
+        DJNZ    D_T0_OVF_HALF_SEC,ISR_VECT_TIMER0_OVERFLOW_END
         MOV     D_T0_OVF_HALF_SEC,#50
         ;Below this line, everything gets executed exactly every 0.5 sec
         ;If and only if a clock frequency of 11.0592MHz is used
         LCALL   S_CHASER_ON_P1
         CPL     B_T0_OVF_SEC_EXTEND_BIT
-        JNB     B_T0_OVF_SEC_EXTEND_BIT,IRQ_VECT_TIMER0_OVERFLOW_END
+        JNB     B_T0_OVF_SEC_EXTEND_BIT,ISR_VECT_TIMER0_OVERFLOW_END
         ;Below this line, everything gets executed exactly every 1 sec
         ;If and only if a clock frequency of 11.0592MHz is used
         LCALL   S_COUNTER_ON_P2
-IRQ_VECT_TIMER0_OVERFLOW_END:
+ISR_VECT_TIMER0_OVERFLOW_END:
         RETI
 $ENDIF
 $ENDIF 

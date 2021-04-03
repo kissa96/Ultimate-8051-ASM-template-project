@@ -26,7 +26,6 @@ SOFTWARE.
         $INCLUDE(CONFIG.INC)
         $INCLUDE(ALIASES.INC)
         $INCLUDE(MACROS.INC)
-        $INCLUDE(GYAK552_UV2.INC)
         $INCLUDE(EXTERNALS.INC) ;contains every external symbol
         
         NAME    BLACK_BELT_TEMPLATE_CODE
