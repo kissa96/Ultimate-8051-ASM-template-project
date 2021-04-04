@@ -26,6 +26,7 @@ SOFTWARE.
 
 IN_PIR_LAB      EQU     0
 
+$SET    (ASSEMBLE_STARTUP                  = 1)
 $SET    (ASSEMBLE_SUBROUTINES              = 1)
 $SET    (ASSEMBLE_I2C_IO_LIB               = 0)
 $SET    (ASSEMBLE_VARIABLES                = 1)

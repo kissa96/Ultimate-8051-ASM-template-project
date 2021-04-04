@@ -143,8 +143,8 @@ S_SERIAL_WRITE_TEXT_AT_DPTR_END_OF_TEXT_AT_DPTR:
 RET
         
 S_GET_NEXT_INSTR_PC_VALUE_IN_DPTR:
-        POP     DPH
-        POP     DPL
+        POP     DPH     ;DPH <-- PCH (Program Counter [7:0])
+        POP     DPL     ;DPL <-- PCL (Program Counter [15:8])
         INC     SP
         INC     SP
 RET

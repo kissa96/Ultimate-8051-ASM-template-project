@@ -16,18 +16,17 @@
                 NAME    ?C_STARTUP
                 EXTRN   IDATA   (?STACK0)
 
-?C_C51STARTUP   SEGMENT   CODE
-
-
                 EXTRN CODE (?C_START)
-                PUBLIC  ?C_STARTUP
+
 IF IN_PIR_LAB <> 1
                 CSEG    AT      0H
 ELSE
                 CSEG    AT      4000H
-ENDIF                   
+ENDIF  
+$IF(ASSEMBLE_STARTUP = 1)   
+                PUBLIC  ?C_STARTUP
 ?C_STARTUP:     LJMP    STARTUP1
-
+                ?C_C51STARTUP   SEGMENT   CODE
                 RSEG    ?C_C51STARTUP
 
 STARTUP1:
@@ -85,13 +84,13 @@ EXTRN DATA (?C_PBP)
                 MOV     ?C_PBP,#LOW PBPSTACKTOP
 ENDIF
 
-                MOV     SP,#?STACK0-1
 
 #if 0   
 EXTRN CODE (?B_SWITCH0)
                 CALL    ?B_SWITCH0
 #endif
-
+$ENDIF
+                MOV     SP,#?STACK0-1
                 LJMP    ?C_START
 
                 END
