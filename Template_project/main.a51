@@ -59,6 +59,7 @@ P_USER_PROGRAM_START:
         
         MOV     P1,#1
         LCALL   S_INIT_INTERRUPT_SYSTEM
+        MOV     TL0,#0FAH ;To speed up the occurrence of the first interrupt
 END_OF_PROGRAM:
         M_SLEEP ;Definition of macros can be found inside MACROS.INC
         LJMP    END_OF_PROGRAM
