@@ -24,7 +24,14 @@ SOFTWARE.
 #ifndef CONFIG_H
 #define CONFIG_H
 
-IN_PIR_LAB      EQU     0
+IN_PIR_LAB          EQU 0
+
+
+;Set this, if you wish to simulate program execution, as if it were running on the "gyakorlo"
+;FYI: do not set it to 1 if you wish to link the program to the real hardware, as it would "try to" overwrite the monitor itself.
+IN_PIR_LAB_SIMULATE EQU 0
+
+MONITOR_PROGRAM_OFFSET EQU 4000H
 
 $SET    (ASSEMBLE_STARTUP                  = 1)
 $SET    (ASSEMBLE_SUBROUTINES              = 1)

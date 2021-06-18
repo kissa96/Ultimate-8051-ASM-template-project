@@ -63,8 +63,5 @@ P_USER_PROGRAM_START:
 END_OF_PROGRAM:
         M_SLEEP ;Definition of macros can be found inside MACROS.INC
         LJMP    END_OF_PROGRAM
-        
-        
-        
-        
+      
         END
