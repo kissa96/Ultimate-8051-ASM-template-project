@@ -145,7 +145,7 @@ RET
 S_GET_NEXT_INSTR_PC_VALUE_IN_DPTR:
         POP     DPH     ;DPH <-- PCH (Program Counter [7:0])
         POP     DPL     ;DPL <-- PCL (Program Counter [15:8])
-        INC     SP
+        INC     SP      ;Restore SP in order to return to the correct address
         INC     SP
 RET
         
@@ -161,6 +161,9 @@ S_INIT_INTERRUPT_SYSTEM:
         MOV     IP1,#00H
         
         SETB    PT0
+
+;This solution does work indeed, however it is not memory and runtime efficient.
+;In case your program is already large enough, replace these lines with a simple byte-based write to IEN0 and IEN1
 $IF(ASSEMBLE_ISR_EXTERNAL0 = 1)
         SETB    EX0
 $ENDIF
@@ -207,7 +210,5 @@ $IF (ASSEMBLE_ISR_ALL = 1)
         SETB    EA
 $ENDIF
         RET
-
-
 $ENDIF      
         END 
