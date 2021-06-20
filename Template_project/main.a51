@@ -48,8 +48,11 @@ P_USER_PROGRAM_START:
 
         LCALL   S_INIT_SERIAL_PORT      ;Definition of subroutines can be found inside SUBROUTINES.A51
         LCALL   S_INIT_TIMER_0
+        LCALL   S_DEC_DPTR      ;Software implemented DPTR decrement
+        M_DEC_DPTR              ;Same with macro
         MOV     DPTR,#C_LOREM_IPSUM
         LCALL   S_SERIAL_WRITE_TEXT_AT_DPTR
+        LCALL   S_SERIAL_WRITE_NEWLINE
         LCALL   S_GET_NEXT_INSTR_PC_VALUE_IN_DPTR
         
         MOV     DPTR,#X_VAR

@@ -53,8 +53,8 @@ $IF(ASSEMBLE_SUBROUTINES = 1)
         PUBLIC  S_INIT_TIMER_0
         PUBLIC  S_CHASER_ON_P1
         PUBLIC  S_COUNTER_ON_P2
-        
-        
+        PUBLIC  S_DEC_DPTR
+        PUBLIC  S_SERIAL_WRITE_NEWLINE
         
 S_NOP:  
         NOP
@@ -124,7 +124,20 @@ S_SERIAL_READ_BYTE:
         CLR     RI
         MOV     A,SBUF
 RET
-        
+
+S_SERIAL_WRITE_NEWLINE:
+;Write CR+LF to terminal
+        PUSH    ACC
+;UNIX based operating systems do not need CR to print out a new line to the terminal
+$IF (RUNNING_UNDER_UNIX <> 1)
+        MOV     A,#13   ;CR
+        LCALL   S_SERIAL_WRITE_BYTE
+$ENDIF
+        MOV     A,#10   ;LF
+        LCALL   S_SERIAL_WRITE_BYTE
+        POP     ACC
+RET
+
 S_SERIAL_WRITE_TEXT_AT_DPTR:
         PUSH    DPH             
         PUSH    DPL           
@@ -141,7 +154,16 @@ S_SERIAL_WRITE_TEXT_AT_DPTR_END_OF_TEXT_AT_DPTR:
         POP     DPL             
         POP     DPH
 RET
-        
+
+S_DEC_DPTR:
+        PUSH    ACC
+        DEC     DPL
+        MOV     A,DPL
+        CJNE    A,#0xFF,$+5
+        DEC     DPH
+        POP     ACC
+RET
+     
 S_GET_NEXT_INSTR_PC_VALUE_IN_DPTR:
         POP     DPH     ;DPH <-- PCH (Program Counter [7:0])
         POP     DPL     ;DPL <-- PCL (Program Counter [15:8])

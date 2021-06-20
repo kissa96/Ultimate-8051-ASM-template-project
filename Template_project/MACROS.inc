@@ -35,5 +35,12 @@ SOFTWARE.
         MOV     PCON,#01H
         ENDM
 
-
+        M_DEC_DPTR MACRO
+        PUSH    ACC
+        DEC     DPL
+        MOV     A,DPL
+        CJNE    A,#0xFF,$+5
+        DEC     DPH
+        POP     ACC
+        ENDM
 #endif

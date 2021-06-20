@@ -33,6 +33,11 @@ IN_PIR_LAB_SIMULATE EQU 0
 
 MONITOR_PROGRAM_OFFSET EQU 4000H
 
+;Serial port handles newline differently on UNIX and Windows.
+;For Windows, a newline is CR+LF
+;For UNIX based OS, newline is simply LF
+$SET    (RUNNING_UNDER_UNIX                = 0)
+
 $SET    (ASSEMBLE_STARTUP                  = 1)
 $SET    (ASSEMBLE_SUBROUTINES              = 1)
 $SET    (ASSEMBLE_I2C_IO_LIB               = 0)
