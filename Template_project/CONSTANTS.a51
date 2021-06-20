@@ -24,8 +24,8 @@ SOFTWARE.
 $IF    (ASSEMBLE_VARIABLES = 1)          
 $IF    (ASSEMBLE_CONSTANTS = 1)
 
-        CR      EQU     15
-        LF      EQU     12
+        CR      EQU     13
+        LF      EQU     10
 
 ;READ ONLY VARIABLES FOR CODE SPACE	
         CCONST SEGMENT CODE
