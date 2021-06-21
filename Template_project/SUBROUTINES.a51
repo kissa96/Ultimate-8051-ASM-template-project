@@ -55,9 +55,67 @@ $IF(ASSEMBLE_SUBROUTINES = 1)
         PUBLIC  S_COUNTER_ON_P2
         PUBLIC  S_DEC_DPTR
         PUBLIC  S_SERIAL_WRITE_NEWLINE
+        PUBLIC  S_SERIAL_DECIMAL_READ_TO_ACC
+        PUBLIC  S_SERIAL_DECIMAL_WRITE_FROM_ACC
+        PUBLIC  S_SERIAL_TRY_GET
+        PUBLIC  S_SERIAL_TRY_PUT
         
 S_NOP:  
         NOP
+RET
+S_SERIAL_TRY_GET:
+        JNB     RI,$+6
+        LCALL   S_SERIAL_READ_BYTE
+RET
+S_SERIAL_TRY_PUT:
+        JNB     TI,$+6
+        LCALL   S_SERIAL_WRITE_BYTE
+RET
+S_SERIAL_DECIMAL_READ_TO_ACC:
+        USING   0
+        PUSH    B
+        PUSH    AR2
+        PUSH    PSW
+        CLR     RS0
+        CLR     RS1
+        LCALL   S_SERIAL_READ_BYTE
+        CLR     C
+        SUBB	A,#30H
+        MOV	B,#100
+        MUL	AB
+        MOV	R2,A
+        LCALL	S_SERIAL_READ_BYTE
+        CLR     C
+        SUBB	A,#30H
+        MOV	B,#10
+        MUL	AB
+        ADD	A,R2
+        MOV	R2,A
+        LCALL	S_SERIAL_READ_BYTE
+        CLR     C
+        SUBB	A,#30H
+        ADD	A,R2
+        POP     PSW
+        POP     AR2
+        POP     B
+RET
+S_SERIAL_DECIMAL_WRITE_FROM_ACC:
+        PUSH    ACC
+        PUSH    B
+        MOV	B,#100
+        DIV	AB
+        ADD	A,#30H
+        LCALL   S_SERIAL_WRITE_BYTE
+        MOV	A,B
+        MOV	B,#10
+        DIV	AB
+        ADD	A,#30H
+        LCALL   S_SERIAL_WRITE_BYTE
+        MOV	A,B	
+        ADD	A,#30H
+        LCALL   S_SERIAL_WRITE_BYTE
+        POP     B
+        POP     ACC
 RET
 
 S_CHASER_ON_P1:

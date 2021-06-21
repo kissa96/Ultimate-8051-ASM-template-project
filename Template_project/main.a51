@@ -54,7 +54,10 @@ P_USER_PROGRAM_START:
         LCALL   S_SERIAL_WRITE_TEXT_AT_DPTR
         LCALL   S_SERIAL_WRITE_NEWLINE
         LCALL   S_GET_NEXT_INSTR_PC_VALUE_IN_DPTR
-        
+        LCALL   S_SERIAL_TRY_GET
+        LCALL   S_SERIAL_TRY_PUT
+        LCALL   S_SERIAL_DECIMAL_READ_TO_ACC
+        LCALL   S_SERIAL_DECIMAL_WRITE_FROM_ACC     
         MOV     DPTR,#X_VAR
         MOVX    A,@DPTR ;ACC now contains whatever was inside X_VAR
         
