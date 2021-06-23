@@ -24,8 +24,10 @@ SOFTWARE.
         $INCLUDE(CONFIG.INC)
 
 IF IN_PIR_LAB_SIMULATE <> 1
-        ;In this case, all vectors are at their correct address
+        ;In this case, vectors are located at their default addresses
 ELSE
+        ;The monitor program occupies lower addresses. User program is linked
+        ;from 4000H, therefore interrupts should be redirected to user space.
         CSEG    AT      0
         LJMP    $+MONITOR_PROGRAM_OFFSET
         CSEG    AT      0x0003
