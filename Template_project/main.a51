@@ -36,7 +36,7 @@ SOFTWARE.
 IF IN_PIR_LAB <> 1
         CSEG    AT      0100H
 ELSE
-        CSEG    AT      4100H
+        CSEG    AT      MONITOR_PROGRAM_OFFSET+100H
 ENDIF        
 P_USER_PROGRAM_START:
 ?C_START:

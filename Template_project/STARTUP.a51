@@ -21,7 +21,7 @@
 IF IN_PIR_LAB <> 1
                 CSEG    AT      0H
 ELSE
-                CSEG    AT      4000H
+                CSEG    AT      MONITOR_PROGRAM_OFFSET
 ENDIF  
 $IF(ASSEMBLE_STARTUP = 1)   
                 PUBLIC  ?C_STARTUP

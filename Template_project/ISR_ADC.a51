@@ -33,7 +33,7 @@ $IF    (ASSEMBLE_ISR_ADC  = 1)
 IF IN_PIR_LAB <> 1
         CSEG    AT      0053H
 ELSE
-        CSEG    AT      4053H
+        CSEG    AT      MONITOR_PROGRAM_OFFSET+0053H
 ENDIF
         LJMP    ISR_VECT_ADC
         ISR_ADC SEGMENT CODE
