@@ -60,6 +60,44 @@ ELSE
         LJMP    $+MONITOR_PROGRAM_OFFSET
         CSEG    AT      0x0073
         LJMP    $+MONITOR_PROGRAM_OFFSET
+        ;The following interrupts are not present in 80c552.
+        ;These lines are placeholders
+/*
+        CSEG    AT      0x007B
+        LJMP    $+MONITOR_PROGRAM_OFFSET
+        CSEG    AT      0x0083
+        LJMP    $+MONITOR_PROGRAM_OFFSET
+        CSEG    AT      0x008B
+        LJMP    $+MONITOR_PROGRAM_OFFSET
+        CSEG    AT      0x0093
+        LJMP    $+MONITOR_PROGRAM_OFFSET
+        CSEG    AT      0x009B
+        LJMP    $+MONITOR_PROGRAM_OFFSET
+        CSEG    AT      0x00A3
+        LJMP    $+MONITOR_PROGRAM_OFFSET
+        CSEG    AT      0x00AB
+        LJMP    $+MONITOR_PROGRAM_OFFSET
+        CSEG    AT      0x00B3
+        LJMP    $+MONITOR_PROGRAM_OFFSET
+        CSEG    AT      0x00BB
+        LJMP    $+MONITOR_PROGRAM_OFFSET
+        CSEG    AT      0x00C3
+        LJMP    $+MONITOR_PROGRAM_OFFSET
+        CSEG    AT      0x00CB
+        LJMP    $+MONITOR_PROGRAM_OFFSET
+        CSEG    AT      0x00D3
+        LJMP    $+MONITOR_PROGRAM_OFFSET
+        CSEG    AT      0x00DB
+        LJMP    $+MONITOR_PROGRAM_OFFSET
+        CSEG    AT      0x00E3
+        LJMP    $+MONITOR_PROGRAM_OFFSET
+        CSEG    AT      0x00EB
+        LJMP    $+MONITOR_PROGRAM_OFFSET
+        CSEG    AT      0x00F3
+        LJMP    $+MONITOR_PROGRAM_OFFSET
+        CSEG    AT      0x00FB
+        LJMP    $+MONITOR_PROGRAM_OFFSET
+*/
 ENDIF
 
 END
