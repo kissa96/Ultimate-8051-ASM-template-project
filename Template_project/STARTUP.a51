@@ -88,8 +88,8 @@ ENDIF
 #if 0   
 EXTRN CODE (?B_SWITCH0)
                 CALL    ?B_SWITCH0
-                MOV     SP,#?STACK0-1
 #endif
+                MOV     SP,#?STACK0-1
 $ENDIF
                 LJMP    ?C_START
 

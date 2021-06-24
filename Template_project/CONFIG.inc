@@ -24,14 +24,16 @@ SOFTWARE.
 #ifndef CONFIG_H
 #define CONFIG_H
 
-IN_PIR_LAB          EQU 0
+IN_PIR_LAB          EQU 1
 
 
 ;Set this, if you wish to simulate program execution, as if it were running on the "gyakorlo"
 ;FYI: do not set it to 1 if you wish to link the program to the real hardware, as it would "try to" overwrite the monitor itself.
-IN_PIR_LAB_SIMULATE EQU 0
+IN_PIR_LAB_SIMULATE EQU 1
 
 MONITOR_PROGRAM_OFFSET EQU 4000H
+
+LAST_INTERRUPT_ADDRESS EQU 0073H
 
 ;Serial port handles newline differently on UNIX and Windows.
 ;For Windows, a newline is CR+LF
@@ -56,7 +58,7 @@ $SET    (ASSEMBLE_ISR_T2_CAPTURE_3         = 1)
 
 $SET    (ASSEMBLE_ISR_ADC                  = 1) 
                                          
-$SET    (ASSEMBLE_ISR_SERIAL               = 1)
+$SET    (ASSEMBLE_ISR_SERIAL               = 0)
 
 $SET    (ASSEMBLE_ISR_TIMER1_OVF           = 1)
 

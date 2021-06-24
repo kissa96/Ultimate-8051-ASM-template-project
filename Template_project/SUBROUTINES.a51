@@ -156,7 +156,7 @@ S_WRITE_XDATA_PERIPH_LEDS_FROM_ACC:
 RET
         
 S_INIT_SERIAL_PORT:
-IF IN_PIR_LAB <> 1      ;does not equal to 1
+IF IN_PIR_LAB_SIMULATE <> 1      ;does not equal to 1
         MOV     SCON,#50H
         ANL     TMOD,#0FH
         ORL     TMOD,#20H
