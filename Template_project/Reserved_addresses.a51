@@ -22,7 +22,7 @@ SOFTWARE.
 */
 
         $INCLUDE(EXTERNALS.INC)
-        
+        ;Code space can be reserved here
 IF IN_PIR_LAB <> 1
         CSEG    AT      LAST_INTERRUPT_ADDRESS+3H
 ELSE
