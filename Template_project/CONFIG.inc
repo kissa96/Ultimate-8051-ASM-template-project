@@ -45,26 +45,26 @@ $SET    (ASSEMBLE_VARIABLES                = 1)
 $SET    (ASSEMBLE_ISR_ALL                  = 1)
             
             
-$SET    (ASSEMBLE_ISR_T2_OVF               = 0)                                           
-$SET    (ASSEMBLE_ISR_T2_COMPARE_0         = 0)
-$SET    (ASSEMBLE_ISR_T2_COMPARE_1         = 0)
-$SET    (ASSEMBLE_ISR_T2_COMPARE_2         = 0)                                                                                     
-$SET    (ASSEMBLE_ISR_T2_CAPTURE_0         = 0)
-$SET    (ASSEMBLE_ISR_T2_CAPTURE_1         = 0)
-$SET    (ASSEMBLE_ISR_T2_CAPTURE_2         = 0)
-$SET    (ASSEMBLE_ISR_T2_CAPTURE_3         = 0) 
+$SET    (ASSEMBLE_ISR_T2_OVF               = 1)                                           
+$SET    (ASSEMBLE_ISR_T2_COMPARE_0         = 1)
+$SET    (ASSEMBLE_ISR_T2_COMPARE_1         = 1)
+$SET    (ASSEMBLE_ISR_T2_COMPARE_2         = 1)                                                                                     
+$SET    (ASSEMBLE_ISR_T2_CAPTURE_0         = 1)
+$SET    (ASSEMBLE_ISR_T2_CAPTURE_1         = 1)
+$SET    (ASSEMBLE_ISR_T2_CAPTURE_2         = 1)
+$SET    (ASSEMBLE_ISR_T2_CAPTURE_3         = 1) 
 
-$SET    (ASSEMBLE_ISR_ADC                  = 0) 
+$SET    (ASSEMBLE_ISR_ADC                  = 1) 
                                          
-$SET    (ASSEMBLE_ISR_SERIAL               = 0)
+$SET    (ASSEMBLE_ISR_SERIAL               = 1)
 
-$SET    (ASSEMBLE_ISR_TIMER1_OVF           = 0)
+$SET    (ASSEMBLE_ISR_TIMER1_OVF           = 1)
 
-$SET    (ASSEMBLE_ISR_EXTERNAL1            = 0)
+$SET    (ASSEMBLE_ISR_EXTERNAL1            = 1)
 
 $SET    (ASSEMBLE_ISR_TIMER0_OVF           = 1)
 
-$SET    (ASSEMBLE_ISR_EXTERNAL0            = 0)   
+$SET    (ASSEMBLE_ISR_EXTERNAL0            = 1)   
 
                                         
 $SET    (ASSEMBLE_BIT_VARIABLES            = 1)
