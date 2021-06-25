@@ -21,13 +21,10 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
 
-        $INCLUDE(EXTERNALS.INC)
-        ;Code space can be reserved here
-IF IN_PIR_LAB <> 1
-        CSEG    AT      LAST_INTERRUPT_ADDRESS+3H
-ELSE
-        CSEG    AT      LAST_INTERRUPT_ADDRESS+MONITOR_PROGRAM_OFFSET+3H
-ENDIF
-        ;Omit addresses after last interrupt vector up until main program
-        DS      (100H-(LAST_INTERRUPT_ADDRESS+3H))
+        $INCLUDE(CONFIG.INC)
+
+$IF(DUMMY_ERROR_MSG == 1)
+        __ERROR__ "Dummy error"
+$ENDIF
+    
 END

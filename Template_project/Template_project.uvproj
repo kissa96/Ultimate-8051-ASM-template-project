@@ -598,6 +598,16 @@
             </File>
           </Files>
         </Group>
+        <Group>
+          <GroupName>Config_errors</GroupName>
+          <Files>
+            <File>
+              <FileName>Config_errors.a51</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\Config_errors.a51</FilePath>
+            </File>
+          </Files>
+        </Group>
       </Groups>
     </Target>
   </Targets>
