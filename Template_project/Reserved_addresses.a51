@@ -22,7 +22,9 @@ SOFTWARE.
 */
 
         $INCLUDE(EXTERNALS.INC)
+        $INCLUDE(CONFIG.INC)
         ;Code space can be reserved here
+$IF     (RESERVE_CODE_SPACE == 1)
 IF IN_PIR_LAB <> 1
         CSEG    AT      LAST_INTERRUPT_ADDRESS+3H
 ELSE
@@ -30,4 +32,5 @@ ELSE
 ENDIF
         ;Omit addresses after last interrupt vector up until main program
         DS      (100H-(LAST_INTERRUPT_ADDRESS+3H))
+$ENDIF
 END

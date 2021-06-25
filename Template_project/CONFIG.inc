@@ -76,6 +76,9 @@ $SET    (ASSEMBLE_IDATA_VARIABLES          = 1)
 $SET    (ASSEMBLE_BITADDRESSABLE_VARIABLES = 1)
 $SET    (ASSEMBLE_XDATA_VARIABLES          = 1)
 
+$SET    (RESERVE_CODE_SPACE                = 1)
+
+
 $SET    (DUMMY_ERROR_MSG                   = 0)
 
 STACKLEN1       EQU     20
