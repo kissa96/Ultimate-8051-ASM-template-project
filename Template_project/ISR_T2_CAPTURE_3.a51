@@ -28,7 +28,7 @@ SOFTWARE.
         $INCLUDE(EXTERNALS.INC)
 
 $IF    (ASSEMBLE_ISR_ALL = 1)
-$IF    (ASSEMBLE_ISR_T2_CAPTURE_3 = 1)       
+$IF    (ASSEMBLE_ISR_T2_CAPTURE_3 = 1)
 
 IF IN_PIR_LAB <> 1
         CSEG    AT      004BH
@@ -37,13 +37,13 @@ ELSE
 ENDIF
         LJMP    ISR_VECT_TIMER_2_CAPTURE3
         ISR_TIMER2_CAPTURE3 SEGMENT CODE
-        RSEG    ISR_TIMER2_CAPTURE3       
+        RSEG    ISR_TIMER2_CAPTURE3
 ISR_VECT_TIMER_2_CAPTURE3:
         USING   0
         CLR     CTI3
-        
-        
+
+
         RETI
-$ENDIF     
-$ENDIF  
+$ENDIF
+$ENDIF
         END

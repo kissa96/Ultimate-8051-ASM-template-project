@@ -33,10 +33,10 @@ SOFTWARE.
         $INCLUDE(EXTERNAL_BITADDRESSABLE_VARIABLES.INC)
         $INCLUDE(EXTERNAL_CONSTANTS.INC)
         $INCLUDE(EXTERNAL_STACK_REFERENCE.INC)
-        
-        
-$IF(ASSEMBLE_SUBROUTINES = 1)        
-        
+
+
+$IF(ASSEMBLE_SUBROUTINES = 1)
+
         SUBROUTINES SEGMENT CODE
         RSEG    SUBROUTINES
 ;SUBROUTINES GO HERE
@@ -59,8 +59,8 @@ $IF(ASSEMBLE_SUBROUTINES = 1)
         PUBLIC  S_SERIAL_DECIMAL_WRITE_FROM_ACC
         PUBLIC  S_SERIAL_TRY_GET
         PUBLIC  S_SERIAL_TRY_PUT
-        
-S_NOP:  
+
+S_NOP:
         NOP
 RET
 S_SERIAL_TRY_GET:
@@ -111,7 +111,7 @@ S_SERIAL_DECIMAL_WRITE_FROM_ACC:
         DIV	AB
         ADD	A,#30H
         LCALL   S_SERIAL_WRITE_BYTE
-        MOV	A,B	
+        MOV	A,B
         ADD	A,#30H
         LCALL   S_SERIAL_WRITE_BYTE
         POP     B
@@ -143,7 +143,7 @@ S_READ_XDATA_PERIPH_BUTTONS_INTO_ACC:
         POP     DPL
         POP     DPH
 RET
-        
+
 S_WRITE_XDATA_PERIPH_LEDS_FROM_ACC:
         PUSH    DPL
         PUSH    DPH
@@ -154,14 +154,14 @@ S_WRITE_XDATA_PERIPH_LEDS_FROM_ACC:
         POP     DPH
         POP     DPL
 RET
-        
+
 S_INIT_SERIAL_PORT:
 IF IN_PIR_LAB_SIMULATE <> 1      ;does not equal to 1
         MOV     SCON,#50H
         ANL     TMOD,#0FH
         ORL     TMOD,#20H
         MOV     TH1,#0FDH
-        SETB    TR1      
+        SETB    TR1
 ELSE
         ;In this case, the monitor program has already configured the serial port
         __WARNING__ "Serial port is being used by MON51, do not change parameters"
@@ -170,13 +170,13 @@ $IF(ASSEMBLE_ISR_SERIAL = 0)
         SETB    TI      ;If and only if serial interrupt is not used
 $ENDIF
 RET
-        
+
 S_SERIAL_WRITE_BYTE:
         JNB     TI,$
         CLR     TI
         MOV     SBUF,A
 RET
-        
+
 S_SERIAL_READ_BYTE:
         JNB     RI,$
         CLR     RI
@@ -197,19 +197,19 @@ $ENDIF
 RET
 
 S_SERIAL_WRITE_TEXT_AT_DPTR:
-        PUSH    DPH             
-        PUSH    DPL           
-        PUSH    ACC            
+        PUSH    DPH
+        PUSH    DPL
+        PUSH    ACC
 S_SERIAL_WRITE_TEXT_AT_DPTR_NEXT_CHAR:
-        CLR     A               
-        MOVC    A,@A+DPTR           
-        JZ      S_SERIAL_WRITE_TEXT_AT_DPTR_END_OF_TEXT_AT_DPTR 
-        LCALL   S_SERIAL_WRITE_BYTE 
-        INC     DPTR               
-        LJMP    S_SERIAL_WRITE_TEXT_AT_DPTR_NEXT_CHAR        
+        CLR     A
+        MOVC    A,@A+DPTR
+        JZ      S_SERIAL_WRITE_TEXT_AT_DPTR_END_OF_TEXT_AT_DPTR
+        LCALL   S_SERIAL_WRITE_BYTE
+        INC     DPTR
+        LJMP    S_SERIAL_WRITE_TEXT_AT_DPTR_NEXT_CHAR
 S_SERIAL_WRITE_TEXT_AT_DPTR_END_OF_TEXT_AT_DPTR:
-        POP     ACC            
-        POP     DPL             
+        POP     ACC
+        POP     DPL
         POP     DPH
 RET
 
@@ -221,25 +221,25 @@ S_DEC_DPTR:
         DEC     DPH
         POP     ACC
 RET
-     
+
 S_GET_NEXT_INSTR_PC_VALUE_IN_DPTR:
         POP     DPH     ;DPH <-- PCH (Program Counter [7:0])
         POP     DPL     ;DPL <-- PCL (Program Counter [15:8])
         INC     SP      ;Restore SP in order to return to the correct address
         INC     SP
 RET
-        
+
 S_INIT_TIMER_0:
         ANL     TMOD,#0F0H
         ORL     TMOD,#02H
         MOV     TH0,#0
         SETB    TR0
 RET
-        
+
 S_INIT_INTERRUPT_SYSTEM:
         MOV     IP0,#00H        ;Set these manually
         MOV     IP1,#00H
-        
+
         SETB    PT0
 
 ;This solution does work indeed, however it is not memory and runtime efficient.
@@ -286,9 +286,9 @@ $ENDIF
 $IF(ASSEMBLE_ISR_ADC = 1)
         SETB    EAD
 $ENDIF
-$IF (ASSEMBLE_ISR_ALL = 1)        
+$IF (ASSEMBLE_ISR_ALL = 1)
         SETB    EA
 $ENDIF
         RET
-$ENDIF      
-        END 
+$ENDIF
+        END

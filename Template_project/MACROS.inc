@@ -24,13 +24,28 @@ SOFTWARE.
 #ifndef MACROS_H
 #define MACROS_H
 
-        M_FILL_RAM_WITH_ACC MACRO 
+        M_FILL_RAM_WITH_ACC MACRO
         MOV     R0,#0FFH
         MOV     @R0,A
         DJNZ    R0,$-1
         MOV     00H,A
         ENDM
-        
+
+        M_FILL_RAM_WITH MACRO   VALUE
+        MOV     A,#VALUE
+        MOV     R0,#0FFH
+        MOV     @R0,A
+        DJNZ    R0,$-1
+        MOV     00H,A
+        ENDM
+
+        M_SET_XDATA_LEDS_TO MACRO       VALUE
+        PUSH    ACC
+        MOV     A,#VALUE
+        LCALL   S_WRITE_XDATA_PERIPH_LEDS_FROM_ACC
+        POP     ACC
+        ENDM
+
         M_SLEEP   MACRO
         MOV     PCON,#01H
         ENDM

@@ -22,19 +22,19 @@ SOFTWARE.
 */
 
         $INCLUDE(CONFIG.INC)
-$IF    (ASSEMBLE_VARIABLES = 1)          
+$IF    (ASSEMBLE_VARIABLES = 1)
 $IF    (ASSEMBLE_XDATA_VARIABLES = 1)
 
 ;VARIABLES FOR XDATA MEMORY SPACE
         XDATA_SEG SEGMENT XDATA
         RSEG    XDATA_SEG
         PUBLIC  X_VAR
-        
-        
-        
-        
+
+
+
+
         X_VAR:	DS	1
 
-$ENDIF 
-$ENDIF      
+$ENDIF
+$ENDIF
         END

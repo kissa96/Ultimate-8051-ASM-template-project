@@ -27,43 +27,40 @@ SOFTWARE.
         $INCLUDE(ALIASES.INC)
         $INCLUDE(MACROS.INC)
         $INCLUDE(EXTERNALS.INC) ;contains every external symbol
-        
+
         NAME    BLACK_BELT_TEMPLATE_CODE
 
-
-        ;Starting address of program can be modified in CONFIG.INC
+        ;Starting address of program, and a lot more can be modified in CONFIG.INC
         PUBLIC ?C_START
 IF IN_PIR_LAB <> 1
         CSEG    AT      0100H
 ELSE
         CSEG    AT      MONITOR_PROGRAM_OFFSET+100H
-ENDIF        
+ENDIF
 P_USER_PROGRAM_START:
 ?C_START:
-        USING   0       ;Select register bank for use with <ARn> : Absolute Register n
-        PUSH    AR0     ;pushes R0 from the selected register bank
-        POP     AR0     ;PUSH and POP instructions use direct addressing respectively
-        PUSH    R0B0    ;R0B0 is a new alias for R0 of Bank0
+        USING   0                                       ;Select register bank for use with <ARn> : Absolute Register n
+        PUSH    AR0                                     ;pushes R0 from the selected register bank
+        POP     AR0                                     ;PUSH and POP instructions use direct addressing respectively
+        PUSH    R0B0                                    ;R0B0 is a new alias for R0 of Bank0
         POP     R7B3
-
-        LCALL   S_INIT_SERIAL_PORT      ;Definition of subroutines can be found inside SUBROUTINES.A51
+        M_SET_XDATA_LEDS_TO     0ABH                    ;Macro: set leds to a constant value
+        LCALL   S_INIT_SERIAL_PORT                      ;Definition of subroutines can be found inside SUBROUTINES.A51
         LCALL   S_INIT_TIMER_0
-        LCALL   S_DEC_DPTR      ;Software implemented DPTR decrement
-        M_DEC_DPTR              ;Same with macro
+        LCALL   S_DEC_DPTR                              ;Software implemented DPTR decrement
+        M_DEC_DPTR                                      ;Same with macro
         MOV     DPTR,#C_LOREM_IPSUM
         LCALL   S_SERIAL_WRITE_TEXT_AT_DPTR
         LCALL   S_SERIAL_WRITE_NEWLINE
-        LCALL   S_GET_NEXT_INSTR_PC_VALUE_IN_DPTR  
+        LCALL   S_GET_NEXT_INSTR_PC_VALUE_IN_DPTR
         MOV     DPTR,#X_VAR
-        MOVX    A,@DPTR ;ACC now contains whatever was inside X_VAR
-        
+        MOVX    A,@DPTR                                 ;ACC now contains whatever was inside X_VAR
         MOV     D_T0_OVF_HALF_SEC,#50
-        
         MOV     P1,#1
         LCALL   S_INIT_INTERRUPT_SYSTEM
-        MOV     TL0,#0FAH ;To speed up the occurrence of the first interrupt
+        MOV     TL0,#0FAH                               ;To speed up the occurrence of the first interrupt
 END_OF_PROGRAM:
-        M_SLEEP ;Definition of macros can be found inside MACROS.INC
+        M_SLEEP                                         ;Definition of macros can be found inside MACROS.INC
         LJMP    END_OF_PROGRAM
-      
+
         END

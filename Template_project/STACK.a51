@@ -27,8 +27,8 @@ SOFTWARE.
         ?STACK SEGMENT IDATA
         RSEG    ?STACK
         PUBLIC  ?STACK0
-?STACK0:        
+?STACK0:
         DS      STACKLEN1
 
-       
+
         END

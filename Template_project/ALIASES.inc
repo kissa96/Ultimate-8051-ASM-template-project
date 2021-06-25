@@ -28,8 +28,8 @@ SOFTWARE.
         SBUF EQU S0BUF
         SCON EQU S0CON
         IE   EQU IEN0
-        IP   EQU IP0   
-        
+        IP   EQU IP0
+
 
 
 //ABSOLUTE ADDRESSES FOR GP REGISTERS IN BANKS 0 TO 3
@@ -41,7 +41,7 @@ SOFTWARE.
         R5B0 EQU 05H
         R6B0 EQU 06H
         R7B0 EQU 07H
-        
+
         R0B1 EQU 08H
         R1B1 EQU 09H
         R2B1 EQU 0AH
@@ -59,7 +59,7 @@ SOFTWARE.
         R5B2 EQU 15H
         R6B2 EQU 16H
         R7B2 EQU 17H
-        
+
         R0B3 EQU 18H
         R1B3 EQU 19H
         R2B3 EQU 1AH
@@ -69,5 +69,5 @@ SOFTWARE.
         R6B3 EQU 1EH
         R7B3 EQU 1FH
 
-        
+
 #endif

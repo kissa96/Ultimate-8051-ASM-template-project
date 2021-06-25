@@ -38,11 +38,11 @@ ELSE
 ENDIF
         LJMP    ISR_VECT_TIMER_1_OVERFLOW
         ISR_TIMER_1 SEGMENT CODE
-        RSEG    ISR_TIMER_1       
+        RSEG    ISR_TIMER_1
 ISR_VECT_TIMER_1_OVERFLOW:
         USING   0
-        
+
         RETI
-$ENDIF     
-$ENDIF   
+$ENDIF
+$ENDIF
         END

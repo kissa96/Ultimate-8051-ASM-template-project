@@ -24,8 +24,8 @@ SOFTWARE.
 #define EXTERNAL_BITADDRESSABLE_VARIABLES_H
 
         $INCLUDE (CONFIG.INC)
-        
-$IF    (ASSEMBLE_VARIABLES = 1)  
+
+$IF    (ASSEMBLE_VARIABLES = 1)
 $IF    (ASSEMBLE_BITADDRESSABLE_VARIABLES = 1)
 
         EXTRN   DATA    (DBA_BADDR_VAR)
@@ -37,8 +37,8 @@ $IF    (ASSEMBLE_BITADDRESSABLE_VARIABLES = 1)
           EXTRN BIT     (_F)
           EXTRN BIT     (_G)
           EXTRN BIT     (_H)
-          
+
 $ENDIF
-$ENDIF          
-          
+$ENDIF
+
 #endif

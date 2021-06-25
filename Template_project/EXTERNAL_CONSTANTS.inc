@@ -24,13 +24,13 @@ SOFTWARE.
 #define EXTERNAL_CONSTANTS_H
 
         $INCLUDE (CONFIG.INC)
-        
-$IF    (ASSEMBLE_VARIABLES = 1)          
+
+$IF    (ASSEMBLE_VARIABLES = 1)
 $IF    (ASSEMBLE_CONSTANTS = 1)
 
         EXTRN   CODE    (C_TEMPLATE_TEXT)
         EXTRN   CODE    (C_LOREM_IPSUM)
-        
+
 $ENDIF
-$ENDIF 
+$ENDIF
 #endif

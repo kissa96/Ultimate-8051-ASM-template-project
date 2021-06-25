@@ -45,19 +45,19 @@ $SET    (ASSEMBLE_SUBROUTINES              = 1)
 $SET    (ASSEMBLE_I2C_IO_LIB               = 0)
 $SET    (ASSEMBLE_VARIABLES                = 1)
 $SET    (ASSEMBLE_ISR_ALL                  = 1)
-            
-            
-$SET    (ASSEMBLE_ISR_T2_OVF               = 1)                                           
+
+
+$SET    (ASSEMBLE_ISR_T2_OVF               = 1)
 $SET    (ASSEMBLE_ISR_T2_COMPARE_0         = 1)
 $SET    (ASSEMBLE_ISR_T2_COMPARE_1         = 1)
-$SET    (ASSEMBLE_ISR_T2_COMPARE_2         = 1)                                                                                     
+$SET    (ASSEMBLE_ISR_T2_COMPARE_2         = 1)
 $SET    (ASSEMBLE_ISR_T2_CAPTURE_0         = 1)
 $SET    (ASSEMBLE_ISR_T2_CAPTURE_1         = 1)
 $SET    (ASSEMBLE_ISR_T2_CAPTURE_2         = 1)
-$SET    (ASSEMBLE_ISR_T2_CAPTURE_3         = 1) 
+$SET    (ASSEMBLE_ISR_T2_CAPTURE_3         = 1)
 
-$SET    (ASSEMBLE_ISR_ADC                  = 1) 
-                                         
+$SET    (ASSEMBLE_ISR_ADC                  = 1)
+
 $SET    (ASSEMBLE_ISR_SERIAL               = 0)
 
 $SET    (ASSEMBLE_ISR_TIMER1_OVF           = 1)
@@ -66,9 +66,9 @@ $SET    (ASSEMBLE_ISR_EXTERNAL1            = 1)
 
 $SET    (ASSEMBLE_ISR_TIMER0_OVF           = 1)
 
-$SET    (ASSEMBLE_ISR_EXTERNAL0            = 1)   
+$SET    (ASSEMBLE_ISR_EXTERNAL0            = 1)
 
-                                        
+
 $SET    (ASSEMBLE_BIT_VARIABLES            = 1)
 $SET    (ASSEMBLE_CONSTANTS                = 1)
 $SET    (ASSEMBLE_DATA_VARIABLES           = 1)
@@ -85,8 +85,8 @@ STACKLEN1       EQU     20
 
 IDATALEN        EQU     80H
 
-XDATASTART      EQU     0000H     
-XDATALEN        EQU     3E00H      
+XDATASTART      EQU     0000H
+XDATALEN        EQU     3E00H
 
 XDATA_PERIPH    EQU     0C000H
 XDATA_PERIPHLEN EQU     4000H
@@ -94,16 +94,16 @@ XDATA_PERIPHLEN EQU     4000H
 PDATASTART      EQU     0H
 PDATALEN        EQU     0H
 
-IBPSTACK        EQU     0       
-IBPSTACKTOP     EQU     0xFF +1   
+IBPSTACK        EQU     0
+IBPSTACKTOP     EQU     0xFF +1
 
-XBPSTACK        EQU     0       
-XBPSTACKTOP     EQU     0xFFFF +1   
+XBPSTACK        EQU     0
+XBPSTACKTOP     EQU     0xFFFF +1
 
-PBPSTACK        EQU     0      
-PBPSTACKTOP     EQU     0xFF +1    
+PBPSTACK        EQU     0
+PBPSTACKTOP     EQU     0xFF +1
 
-PPAGEENABLE     EQU     0      
+PPAGEENABLE     EQU     0
 PPAGE           EQU     0
 PPAGE_SFR       DATA    0A0H
 

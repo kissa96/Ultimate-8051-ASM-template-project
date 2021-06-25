@@ -5,8 +5,8 @@
 ;------------------------------------------------------------------------------
                 $NOMOD51
                 $INCLUDE (CONFIG.INC)
-               
-                ; Standard SFR Symbols 
+
+                ; Standard SFR Symbols
                 ACC     DATA    0E0H
                 B       DATA    0F0H
                 SP      DATA    81H
@@ -22,8 +22,8 @@ IF IN_PIR_LAB <> 1
                 CSEG    AT      0H
 ELSE
                 CSEG    AT      MONITOR_PROGRAM_OFFSET
-ENDIF  
-$IF(ASSEMBLE_STARTUP = 1)   
+ENDIF
+$IF(ASSEMBLE_STARTUP = 1)
                 PUBLIC  ?C_STARTUP
 ?C_STARTUP:     LJMP    STARTUP1
                 ?C_C51STARTUP   SEGMENT   CODE
@@ -85,7 +85,7 @@ EXTRN DATA (?C_PBP)
 ENDIF
 
 
-#if 0   
+#if 0
 EXTRN CODE (?B_SWITCH0)
                 CALL    ?B_SWITCH0
 #endif

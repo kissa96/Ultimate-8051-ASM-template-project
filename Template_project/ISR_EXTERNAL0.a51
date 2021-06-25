@@ -25,7 +25,7 @@ SOFTWARE.
         $INCLUDE(ALIASES.INC)
         $INCLUDE(CONFIG.INC)
         $INCLUDE(REG552.INC)
-        $INCLUDE(MACROS.INC)        
+        $INCLUDE(MACROS.INC)
         $INCLUDE(EXTERNALS.INC)
 
 $IF    (ASSEMBLE_ISR_ALL = 1)
@@ -38,11 +38,11 @@ ELSE
 ENDIF
         LJMP    ISR_VECT_EXTERNAL_0
         ISR_EXTERNAL_0 SEGMENT CODE
-        RSEG    ISR_EXTERNAL_0       
+        RSEG    ISR_EXTERNAL_0
 ISR_VECT_EXTERNAL_0:
         USING   0
-        
+
         RETI ;note, RETI is used instead of RET
-$ENDIF   
-$ENDIF      
+$ENDIF
+$ENDIF
         END

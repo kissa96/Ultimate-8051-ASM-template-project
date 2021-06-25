@@ -27,8 +27,8 @@ SOFTWARE.
         $INCLUDE(MACROS.INC)
         $INCLUDE(EXTERNALS.INC)
 
-$IF    (ASSEMBLE_ISR_ALL = 1)                                       
-$IF    (ASSEMBLE_ISR_T2_OVF = 1)    
+$IF    (ASSEMBLE_ISR_ALL = 1)
+$IF    (ASSEMBLE_ISR_T2_OVF = 1)
 
 IF IN_PIR_LAB <> 1
         CSEG    AT      0073H
@@ -37,17 +37,16 @@ ELSE
 ENDIF
         LJMP    ISR_VECT_TIMER_2_OVF
         ISR_TIMER2_OVF SEGMENT CODE
-        RSEG    ISR_TIMER2_OVF    
+        RSEG    ISR_TIMER2_OVF
 ISR_VECT_TIMER_2_OVF:
         USING   0
         CLR     T2OV
-        
-        
+
+
         RETI
 
 $ENDIF
-$ENDIF 
+$ENDIF
 
         END
-        
-        
+

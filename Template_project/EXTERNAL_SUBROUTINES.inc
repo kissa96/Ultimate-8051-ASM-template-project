@@ -22,9 +22,9 @@ SOFTWARE.
 */
 
         $INCLUDE (CONFIG.INC)
-   
+
 $IF(ASSEMBLE_I2C_IO_LIB = 1)
-        
+
         EXTRN   CODE    (INIT_I2C_IO)
         EXTRN   CODE    (WRITE_I2C_IO)
         EXTRN   CODE    (READ_I2C_IO)

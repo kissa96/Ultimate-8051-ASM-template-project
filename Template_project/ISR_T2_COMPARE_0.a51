@@ -27,8 +27,8 @@ SOFTWARE.
         $INCLUDE(MACROS.INC)
         $INCLUDE(EXTERNALS.INC)
 
-$IF    (ASSEMBLE_ISR_ALL = 1)                                  
-$IF    (ASSEMBLE_ISR_T2_COMPARE_0 = 1)     
+$IF    (ASSEMBLE_ISR_ALL = 1)
+$IF    (ASSEMBLE_ISR_T2_COMPARE_0 = 1)
 
 IF IN_PIR_LAB <> 1
         CSEG    AT      005BH
@@ -37,13 +37,13 @@ ELSE
 ENDIF
         LJMP    ISR_VECT_TIMER_2_COMPARE0
         ISR_TIMER2_COMPARE0 SEGMENT CODE
-        RSEG    ISR_TIMER2_COMPARE0       
+        RSEG    ISR_TIMER2_COMPARE0
 ISR_VECT_TIMER_2_COMPARE0:
         USING   0
         CLR     CMI0
-        
-        
+
+
         RETI
-$ENDIF       
-$ENDIF 
+$ENDIF
+$ENDIF
         END

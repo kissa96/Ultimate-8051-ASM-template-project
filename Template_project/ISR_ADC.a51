@@ -27,8 +27,8 @@ SOFTWARE.
         $INCLUDE(MACROS.INC)
         $INCLUDE(EXTERNALS.INC)
 
-$IF    (ASSEMBLE_ISR_ALL = 1)                                  
-$IF    (ASSEMBLE_ISR_ADC  = 1)      
+$IF    (ASSEMBLE_ISR_ALL = 1)
+$IF    (ASSEMBLE_ISR_ADC  = 1)
 
 IF IN_PIR_LAB <> 1
         CSEG    AT      0053H
@@ -37,13 +37,13 @@ ELSE
 ENDIF
         LJMP    ISR_VECT_ADC
         ISR_ADC SEGMENT CODE
-        RSEG    ISR_ADC     
+        RSEG    ISR_ADC
 ISR_VECT_ADC:
         USING   0
-        
-        
+
+
         ORL     ADCON,#08H
         RETI
-$ENDIF      
-$ENDIF 
+$ENDIF
+$ENDIF
         END

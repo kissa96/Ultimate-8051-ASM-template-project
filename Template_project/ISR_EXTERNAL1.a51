@@ -38,11 +38,11 @@ ELSE
 ENDIF
         LJMP    ISR_VECT_EXTERNAL_1
         ISR_EXTERNAL_1 SEGMENT CODE
-        RSEG    ISR_EXTERNAL_1    
+        RSEG    ISR_EXTERNAL_1
 ISR_VECT_EXTERNAL_1:
         USING   0
 
         RETI
-$ENDIF 
-$ENDIF        
+$ENDIF
+$ENDIF
         END

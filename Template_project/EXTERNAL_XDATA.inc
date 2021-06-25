@@ -24,13 +24,13 @@ SOFTWARE.
 #define EXTERNAL_XDATA_H
 
         $INCLUDE (CONFIG.INC)
-   
-$IF    (ASSEMBLE_VARIABLES = 1)          
+
+$IF    (ASSEMBLE_VARIABLES = 1)
 $IF    (ASSEMBLE_XDATA_VARIABLES = 1)
 
         EXTRN   XDATA   (X_VAR)
 
 $ENDIF
-$ENDIF 
+$ENDIF
 
 #endif

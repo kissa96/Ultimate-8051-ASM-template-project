@@ -21,24 +21,24 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 */
         $INCLUDE(CONFIG.INC)
-$IF    (ASSEMBLE_VARIABLES = 1)          
+$IF    (ASSEMBLE_VARIABLES = 1)
 $IF    (ASSEMBLE_CONSTANTS = 1)
 
         CR      EQU     13
         LF      EQU     10
 
-;READ ONLY VARIABLES FOR CODE SPACE	
+;READ ONLY VARIABLES FOR CODE SPACE
         CCONST SEGMENT CODE
         RSEG	CCONST
         PUBLIC  C_TEMPLATE_TEXT
         PUBLIC  C_LOREM_IPSUM
-        
-        
+
+
 ;ASCII coded character vectors
-C_TEMPLATE_TEXT:	
+C_TEMPLATE_TEXT:
                 DB      "Hello World!",0
 
-C_LOREM_IPSUM: 
+C_LOREM_IPSUM:
                 DB      "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",CR,LF, \
                         "Phasellus ut feugiat urna. Ut finibus molestie ipsum eu rutrum.",CR,LF, \
                         "Fusce imperdiet volutpat vestibulum. Praesent vel elit vel erat viverra dictum.",CR,LF, \
@@ -52,5 +52,5 @@ C_LOREM_IPSUM:
 
 
 $ENDIF
-$ENDIF 
+$ENDIF
         END

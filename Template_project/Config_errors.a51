@@ -26,5 +26,5 @@ SOFTWARE.
 $IF(DUMMY_ERROR_MSG == 1)
         __ERROR__ "Dummy error"
 $ENDIF
-    
+
 END
