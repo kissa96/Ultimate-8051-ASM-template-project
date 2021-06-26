@@ -32,11 +32,11 @@ SOFTWARE.
 
         ;Starting address of program, and a lot more can be modified in CONFIG.INC
         PUBLIC ?C_START
-IF IN_PIR_LAB <> 1
+$IF IN_PIR_LAB <> 1
         CSEG    AT      0100H
-ELSE
+$ELSE
         CSEG    AT      MONITOR_PROGRAM_OFFSET+100H
-ENDIF
+$ENDIF
 P_USER_PROGRAM_START:
 ?C_START:
         USING   0                                       ;Select register bank for use with <ARn> : Absolute Register n

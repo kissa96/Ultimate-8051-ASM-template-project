@@ -25,9 +25,9 @@ SOFTWARE.
 
         NAME    INTERRUPT_REDIRECT_TABLE
 
-IF IN_PIR_LAB_SIMULATE <> 1
+$IF IN_PIR_LAB_SIMULATE <> 1
         ;In this case, vectors are located at their default addresses
-ELSE
+$ELSE
         ;The monitor program occupies lower addresses. User program is linked
         ;from 4000H, therefore interrupts should be redirected to user space.
         CSEG    AT      0
@@ -100,6 +100,6 @@ ELSE
         CSEG    AT      0x00FB
         LJMP    $+MONITOR_PROGRAM_OFFSET
 */
-ENDIF
+$ENDIF
 
 END

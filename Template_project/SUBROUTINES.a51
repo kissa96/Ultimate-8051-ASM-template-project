@@ -157,18 +157,20 @@ S_WRITE_XDATA_PERIPH_LEDS_FROM_ACC:
 RET
 
 S_INIT_SERIAL_PORT:
-IF IN_PIR_LAB_SIMULATE <> 1      ;does not equal to 1
+$IF IN_PIR_LAB_SIMULATE <> 1      ;does not equal to 1
         MOV     SCON,#50H
         ANL     TMOD,#0FH
         ORL     TMOD,#20H
         MOV     TH1,#0FDH
         SETB    TR1
-ELSE
+$ELSE
         ;In this case, the monitor program has already configured the serial port
         __WARNING__ "Serial port is being used by MON51, do not change parameters"
-ENDIF
+$ENDIF
 $IF(ASSEMBLE_ISR_SERIAL = 0)
         SETB    TI      ;If and only if serial interrupt is not used
+$ELSE
+        __WARNING__ "TI flag not set, because Serial interrupt is enabled! Start the process by issuing a write to SBUF"
 $ENDIF
 RET
 

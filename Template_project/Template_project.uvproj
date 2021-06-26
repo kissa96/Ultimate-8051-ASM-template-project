@@ -374,27 +374,137 @@
       </TargetOption>
       <Groups>
         <Group>
-          <GroupName>Main_and_startup</GroupName>
+          <GroupName>Headers</GroupName>
           <Files>
             <File>
-              <FileName>main.a51</FileName>
-              <FileType>2</FileType>
-              <FilePath>.\main.a51</FilePath>
+              <FileName>CONFIG.inc</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\CONFIG.inc</FilePath>
             </File>
             <File>
-              <FileName>STARTUP.a51</FileName>
-              <FileType>2</FileType>
-              <FilePath>.\STARTUP.a51</FilePath>
+              <FileName>gyak552_uv2.inc</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\gyak552_uv2.inc</FilePath>
             </File>
             <File>
-              <FileName>INTERRUPT_REDIRECT_TABLE.a51</FileName>
-              <FileType>2</FileType>
-              <FilePath>.\INTERRUPT_REDIRECT_TABLE.a51</FilePath>
+              <FileName>MACROS.inc</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\MACROS.inc</FilePath>
             </File>
             <File>
-              <FileName>Reserved_addresses.a51</FileName>
+              <FileName>ALIASES.inc</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\ALIASES.inc</FilePath>
+            </File>
+            <File>
+              <FileName>EXTERNAL_BIT_VARIABLES.inc</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\EXTERNAL_BIT_VARIABLES.inc</FilePath>
+            </File>
+            <File>
+              <FileName>EXTERNAL_BITADDRESSABLE_VARIABLES.inc</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\EXTERNAL_BITADDRESSABLE_VARIABLES.inc</FilePath>
+            </File>
+            <File>
+              <FileName>EXTERNAL_CONSTANTS.inc</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\EXTERNAL_CONSTANTS.inc</FilePath>
+            </File>
+            <File>
+              <FileName>EXTERNAL_DATA.inc</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\EXTERNAL_DATA.inc</FilePath>
+            </File>
+            <File>
+              <FileName>EXTERNAL_IDATA.inc</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\EXTERNAL_IDATA.inc</FilePath>
+            </File>
+            <File>
+              <FileName>EXTERNAL_STACK_REFERENCE.inc</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\EXTERNAL_STACK_REFERENCE.inc</FilePath>
+            </File>
+            <File>
+              <FileName>EXTERNAL_SUBROUTINES.inc</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\EXTERNAL_SUBROUTINES.inc</FilePath>
+            </File>
+            <File>
+              <FileName>EXTERNAL_XDATA.inc</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\EXTERNAL_XDATA.inc</FilePath>
+            </File>
+            <File>
+              <FileName>EXTERNALS.inc</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\EXTERNALS.inc</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Config_errors</GroupName>
+          <Files>
+            <File>
+              <FileName>Config_errors.a51</FileName>
               <FileType>2</FileType>
-              <FilePath>.\Reserved_addresses.a51</FilePath>
+              <FilePath>.\Config_errors.a51</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Data_Space</GroupName>
+          <Files>
+            <File>
+              <FileName>BIT_VARIABLES.a51</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\BIT_VARIABLES.a51</FilePath>
+            </File>
+            <File>
+              <FileName>STACK.a51</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\STACK.a51</FilePath>
+            </File>
+            <File>
+              <FileName>CONSTANTS.a51</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\CONSTANTS.a51</FilePath>
+            </File>
+            <File>
+              <FileName>DATA_VARIABLES.a51</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\DATA_VARIABLES.a51</FilePath>
+            </File>
+            <File>
+              <FileName>IDATA_VARIABLES.a51</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\IDATA_VARIABLES.a51</FilePath>
+            </File>
+            <File>
+              <FileName>BITADDRESSABLE_VARIABLES.a51</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\BITADDRESSABLE_VARIABLES.a51</FilePath>
+            </File>
+            <File>
+              <FileName>XDATA_VARIABLES.a51</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\XDATA_VARIABLES.a51</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Subroutines</GroupName>
+          <Files>
+            <File>
+              <FileName>SUBROUTINES.a51</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\SUBROUTINES.a51</FilePath>
+            </File>
+            <File>
+              <FileName>i2c_io.lib</FileName>
+              <FileType>4</FileType>
+              <FilePath>.\i2c_io.lib</FilePath>
             </File>
           </Files>
         </Group>
@@ -474,137 +584,27 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>Data_Space</GroupName>
+          <GroupName>Main_and_startup</GroupName>
           <Files>
             <File>
-              <FileName>BIT_VARIABLES.a51</FileName>
+              <FileName>main.a51</FileName>
               <FileType>2</FileType>
-              <FilePath>.\BIT_VARIABLES.a51</FilePath>
+              <FilePath>.\main.a51</FilePath>
             </File>
             <File>
-              <FileName>STACK.a51</FileName>
+              <FileName>STARTUP.a51</FileName>
               <FileType>2</FileType>
-              <FilePath>.\STACK.a51</FilePath>
+              <FilePath>.\STARTUP.a51</FilePath>
             </File>
             <File>
-              <FileName>CONSTANTS.a51</FileName>
+              <FileName>INTERRUPT_REDIRECT_TABLE.a51</FileName>
               <FileType>2</FileType>
-              <FilePath>.\CONSTANTS.a51</FilePath>
+              <FilePath>.\INTERRUPT_REDIRECT_TABLE.a51</FilePath>
             </File>
             <File>
-              <FileName>DATA_VARIABLES.a51</FileName>
+              <FileName>Reserved_addresses.a51</FileName>
               <FileType>2</FileType>
-              <FilePath>.\DATA_VARIABLES.a51</FilePath>
-            </File>
-            <File>
-              <FileName>IDATA_VARIABLES.a51</FileName>
-              <FileType>2</FileType>
-              <FilePath>.\IDATA_VARIABLES.a51</FilePath>
-            </File>
-            <File>
-              <FileName>BITADDRESSABLE_VARIABLES.a51</FileName>
-              <FileType>2</FileType>
-              <FilePath>.\BITADDRESSABLE_VARIABLES.a51</FilePath>
-            </File>
-            <File>
-              <FileName>XDATA_VARIABLES.a51</FileName>
-              <FileType>2</FileType>
-              <FilePath>.\XDATA_VARIABLES.a51</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>Subroutines</GroupName>
-          <Files>
-            <File>
-              <FileName>SUBROUTINES.a51</FileName>
-              <FileType>2</FileType>
-              <FilePath>.\SUBROUTINES.a51</FilePath>
-            </File>
-            <File>
-              <FileName>i2c_io.lib</FileName>
-              <FileType>4</FileType>
-              <FilePath>.\i2c_io.lib</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>Headers</GroupName>
-          <Files>
-            <File>
-              <FileName>gyak552_uv2.inc</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\gyak552_uv2.inc</FilePath>
-            </File>
-            <File>
-              <FileName>MACROS.inc</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\MACROS.inc</FilePath>
-            </File>
-            <File>
-              <FileName>ALIASES.inc</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\ALIASES.inc</FilePath>
-            </File>
-            <File>
-              <FileName>CONFIG.inc</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\CONFIG.inc</FilePath>
-            </File>
-            <File>
-              <FileName>EXTERNAL_BIT_VARIABLES.inc</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\EXTERNAL_BIT_VARIABLES.inc</FilePath>
-            </File>
-            <File>
-              <FileName>EXTERNAL_BITADDRESSABLE_VARIABLES.inc</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\EXTERNAL_BITADDRESSABLE_VARIABLES.inc</FilePath>
-            </File>
-            <File>
-              <FileName>EXTERNAL_CONSTANTS.inc</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\EXTERNAL_CONSTANTS.inc</FilePath>
-            </File>
-            <File>
-              <FileName>EXTERNAL_DATA.inc</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\EXTERNAL_DATA.inc</FilePath>
-            </File>
-            <File>
-              <FileName>EXTERNAL_IDATA.inc</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\EXTERNAL_IDATA.inc</FilePath>
-            </File>
-            <File>
-              <FileName>EXTERNAL_STACK_REFERENCE.inc</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\EXTERNAL_STACK_REFERENCE.inc</FilePath>
-            </File>
-            <File>
-              <FileName>EXTERNAL_SUBROUTINES.inc</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\EXTERNAL_SUBROUTINES.inc</FilePath>
-            </File>
-            <File>
-              <FileName>EXTERNAL_XDATA.inc</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\EXTERNAL_XDATA.inc</FilePath>
-            </File>
-            <File>
-              <FileName>EXTERNALS.inc</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\EXTERNALS.inc</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>Config_errors</GroupName>
-          <Files>
-            <File>
-              <FileName>Config_errors.a51</FileName>
-              <FileType>2</FileType>
-              <FilePath>.\Config_errors.a51</FilePath>
+              <FilePath>.\Reserved_addresses.a51</FilePath>
             </File>
           </Files>
         </Group>

@@ -18,11 +18,11 @@
 
                 EXTRN   CODE    (?C_START)
 
-IF IN_PIR_LAB <> 1
+$IF IN_PIR_LAB <> 1
                 CSEG    AT      0H
-ELSE
+$ELSE
                 CSEG    AT      MONITOR_PROGRAM_OFFSET
-ENDIF
+$ENDIF
 $IF(ASSEMBLE_STARTUP = 1)
                 PUBLIC  ?C_STARTUP
 ?C_STARTUP:     LJMP    STARTUP1
