@@ -16,7 +16,7 @@
                 NAME    ?C_STARTUP
                 EXTRN   IDATA   (?STACK0)
 
-                EXTRN CODE (?C_START)
+                EXTRN   CODE    (?C_START)
 
 IF IN_PIR_LAB <> 1
                 CSEG    AT      0H

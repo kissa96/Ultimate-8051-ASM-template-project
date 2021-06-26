@@ -23,6 +23,8 @@ SOFTWARE.
 
         $INCLUDE(EXTERNALS.INC)
         $INCLUDE(CONFIG.INC)
+
+        NAME    RESERVED_ADDRESSES
         ;Code space can be reserved here
 $IF     (RESERVE_CODE_SPACE == 1)
 IF IN_PIR_LAB <> 1

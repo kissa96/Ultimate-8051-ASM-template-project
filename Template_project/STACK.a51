@@ -23,6 +23,8 @@ SOFTWARE.
 
         $INCLUDE(CONFIG.INC)
 
+        NAME    STACK
+
 ;STACK SEGMENT
         ?STACK SEGMENT IDATA
         RSEG    ?STACK

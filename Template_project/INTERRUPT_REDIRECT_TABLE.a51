@@ -23,6 +23,8 @@ SOFTWARE.
 
         $INCLUDE(CONFIG.INC)
 
+        NAME    INTERRUPT_REDIRECT_TABLE
+
 IF IN_PIR_LAB_SIMULATE <> 1
         ;In this case, vectors are located at their default addresses
 ELSE
