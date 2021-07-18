@@ -47,7 +47,7 @@ SOFTWARE.
         ENDM
 
         M_SLEEP   MACRO
-        MOV     PCON,#01H
+        ORL     PCON,#01H
         ENDM
 
         M_DEC_DPTR MACRO
