@@ -58,4 +58,12 @@ SOFTWARE.
         DEC     DPH
         POP     ACC
         ENDM
+
+        M_SERIAL_CAN_GET MACRO
+        MOV     C,RI
+        ENDM
+
+        M_SERIAL_CAN_PUT MACRO
+        MOV     C,TI
+        ENDM
 #endif

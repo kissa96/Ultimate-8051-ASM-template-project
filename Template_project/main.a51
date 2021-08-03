@@ -50,6 +50,8 @@ P_USER_PROGRAM_START:
         LCALL   S_DEC_DPTR                              ;Software implemented DPTR decrement
         M_DEC_DPTR                                      ;Same with macro
         MOV     DPTR,#C_LOREM_IPSUM
+        LCALL   S_SERIAL_CAN_GET
+        LCALL   S_SERIAL_CAN_PUT
         LCALL   S_SERIAL_WRITE_TEXT_AT_DPTR
         LCALL   S_SERIAL_WRITE_NEWLINE
         LCALL   S_GET_NEXT_INSTR_PC_VALUE_IN_DPTR
