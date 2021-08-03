@@ -1,7 +1,6 @@
-<<<<<<< HEAD
 # A .gitignore for Keil projects.
 
-/Template_code/*
+/Template_project/*
 # User-specific uVision files
 *.opt
 *.uvopt
@@ -42,8 +41,8 @@
 *._ii
 
 # Generated output files
-/Template_code/Listings/*.*
-/Template_code/Objects/*.*
+/Template_project/Listings/*.*
+/Template_project/Objects/*.*
 
 # Debugger files
 # define exception below if needed
@@ -74,5 +73,3 @@
 *.l1p
 *.l2p
 *.iex
-
-=======
