@@ -254,7 +254,7 @@ S_INIT_INTERRUPT_SYSTEM:
         SETB    PT0
 
 ;This solution does work indeed, however it is not memory and runtime efficient.
-;In case your program is already large enough, replace these lines with a simple byte-based write to IEN0 and IEN1
+;In case your program is already large enough, replace these lines with simple byte-based writes to IEN0 and IEN1
 $IF(ASSEMBLE_ISR_EXTERNAL0 = 1)
         SETB    EX0
 $ENDIF

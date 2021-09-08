@@ -24,6 +24,11 @@ SOFTWARE.
 #ifndef CONFIG_H
 #define CONFIG_H
 
+;These $SET parameters can be set directly from the command line as well.
+;In case you would like to do so, then invoke A51 with plusargs defining these symbols
+;Be sure to comment out the lines you wish to set to a different value using this method,
+;as during compilation, this file would redefine those symbols!
+
 $SET    (IN_PIR_LAB                        = 1)
 
 
